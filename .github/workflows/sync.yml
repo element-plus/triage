@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - 'main'
+
+jobs:
+  sync-vercel:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to vercel
+        uses: JamesIves/github-pages-deploy-action@v4.3.0
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+          branch: main
+          folder: ./
+          repository-name: ElementPlusBot/ElementPlus
+          git-config-name: ElementPlusBot
+          git-config-email: hello@element-plus.org
