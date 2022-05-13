@@ -1,0 +1,24 @@
+{
+  "name": "@element-plus/triage",
+  "version": "0.0.0-development",
+  "description": "GitHub repo triage operations",
+  "main": "index.js",
+  "module": "index.mjs",
+  "repository": "https://github.com/element-plus/triage",
+  "packageManager": "pnpm@7.0.0",
+  "keywords": [
+    "probot",
+    "probot-plugin",
+    "triage"
+  ],
+  "dependencies": {
+    "probot": "^12.2.2",
+    "probot-config": "^1.1.0"
+  },
+  "devDependencies": {
+    "@octokit/rest": "^18.12.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
