@@ -1,4 +1,4 @@
-const { createNodeMiddleware, createProbot } = require("probot");
+const { createNodeMiddleware, createProbot, Context } = require("probot");
 
 const triage = require("../");
 const probot = createProbot();
@@ -12,6 +12,7 @@ const triageMiddleware = createNodeMiddleware(triage, { probot });
  */
 module.exports = (request, response) => {
   if (request.method !== "POST") {
+    console.log('REDIRECT from ', request.url);
     response.writeHead(302, {
       Location: "/stats",
     });
