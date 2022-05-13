@@ -1,5 +1,5 @@
 
-const labelIfFirstTime = require('./lib/actions/label-if-first-time');
+const handlePullRequestOpened = require('./lib/handlers/pull-request-opened');
 
 module.exports = triage;
 /**
@@ -9,12 +9,12 @@ module.exports = triage;
  */
 function triage(robot) {
   robot.on(
-    ['pull_request.opened', 'pull_request.edited', 'pull_request.synchronize'],
+    ['pull_request.edited', 'pull_request.synchronize'],
     (context) => {
-
       context.log.debug(context.id);
-
-      labelIfFirstTime(context);
     }
   )
+
+  handlePullRequestOpened(robot);
+
 }
