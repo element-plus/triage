@@ -7,7 +7,6 @@ node_modules
 
 # System
 .DS_Store
-.env
 
 # Bundle
 dist
@@ -18,3 +17,7 @@ coverage
 cypress/screenshots/*
 cypress/videos/*
 tmp
+
+*.pem
+!mock-cert.pem
+.env
